@@ -41,16 +41,16 @@ namespace xadrez
             if(cor == Cor.Branca)
             {
                 //# jogada en passant
-                if (pos.linha == 3)
+                if (posicao.linha == 3)
                 {
-                    Posicao esquerda = new Posicao(pos.linha, pos.coluna - 1);
+                    Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
 
                     if (tab.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && tab.peca(esquerda) == partida.VuneravelEnPassant)
                     {
                         mat[esquerda.linha - 1, esquerda.coluna] = true;
                     }
 
-                    Posicao direita = new Posicao(pos.linha, pos.coluna + 1);
+                    Posicao direita = new Posicao(posicao.linha, posicao.coluna + 1);
 
                     if (tab.PosicaoValida(direita) && ExisteInimigo(direita) && tab.peca(direita) == partida.VuneravelEnPassant)
                     {
@@ -89,16 +89,16 @@ namespace xadrez
             else
             {
                 //# jogada en passant
-                if (pos.linha == 4)
+                if (posicao.linha == 4)
                 {
-                    Posicao esquerda = new Posicao(pos.linha, pos.coluna - 1);
+                    Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
 
                     if (tab.PosicaoValida(esquerda) && ExisteInimigo(esquerda) && tab.peca(esquerda) == partida.VuneravelEnPassant)
                     {
                         mat[esquerda.linha + 1, esquerda.coluna] = true;
                     }
 
-                    Posicao direita = new Posicao(pos.linha, pos.coluna + 1);
+                    Posicao direita = new Posicao(posicao.linha, posicao.coluna + 1);
 
                     if (tab.PosicaoValida(direita) && ExisteInimigo(direita) && tab.peca(direita) == partida.VuneravelEnPassant)
                     {
